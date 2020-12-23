@@ -1,0 +1,421 @@
+/***************************************************
+GLOBAL
+***************************************************/
+
+/* @import "inbuild.css"; */
+
+/* Permet d'éviter le chevauchement des marges + padding */
+* {
+    box-sizing: border-box;
+}
+
+/* définition de la police par défaut de la page et couleur de fond */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #802E24;
+}
+
+/* dimentionnement des containers */
+.container {
+    /* width à commenter pour prendre toute la page */
+    width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+/* classe pour mise en forme du texte en MAJ */
+.upperc {
+    text-transform: uppercase;
+}
+
+
+/* définition de plusieurs couleurs utilisées dans la page */
+.color-1 {
+    color: #802E24;
+    fill: #802E24;
+}
+
+.color-2 {
+    color: #FF8A7A;
+    fill: #FF8A7A;
+}
+
+.color-3 {
+    color: rgba(66, 134, 237, 0.9);
+    fill: rgba(66, 134, 237, 0.9);
+}
+
+.color-4 {
+    color: white;
+    fill: white;
+}
+
+/* Style par défaut pour les liens + effet transition */
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+/* Marge à 0 + ombre texte pour les titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* marge auto pour les paragraphe et hr */
+p,
+hr {
+    margin: auto;
+}
+
+/* liste des nav + id footer sans marge padding et style */
+nav ul,
+#footer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* effet au survol des liens, input, logo svg en main et footer */
+a:hover,
+input:hover,
+main svg:hover,
+footer svg:hover {
+    opacity: 0.8;
+    filter: none;
+    /* transform: scale(1.02); */
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+/* modif du style du pointer de la souris au survol des input et select */
+input:hover,
+select:hover {
+    cursor: pointer;
+}
+
+/* stylisation des flexbox */
+.flex {
+    display: flex;
+    /*positionner les enfants l'un à côté de l'autre*/
+    justify-content: space-between;
+    /*les enfants occupent toute la largeur du bloc parent*/
+    flex-wrap: wrap;
+    /*Lorsqu’il n’y a plus assez de place en largeur, les enfants se placent les uns sous les autres*/
+    align-items: center;
+}
+
+/* filtre ombre sur tout les svg */
+svg {
+    filter: drop-shadow(2px 0px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* style et dimensionnement des select + option et input */
+select,
+input {
+    font-size: 20px;
+    width: 220px;
+    height: 60px;
+    border: 1px solid #FF8A7A;
+    padding: 0 10px;
+    margin: 0;
+    background-color: transparent;
+    color: white;
+}
+
+select option {
+    color: white;
+    background-color: #802E24;
+}
+
+/* padding et mise en forme des titre h3 et h4 sur les id suivant */
+#trends,
+#kind,
+#about {
+    padding: 100px 0 100px 0;
+    /* width: 900px; */
+}
+
+#kind h3,
+#trends h3,
+#about h3 {
+    padding-bottom: 10px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#kind h4,
+#trends h4,
+#about h4 {
+    padding-bottom: 40px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+/***************************************************
+STRUCTURE - Positionnement - dimensionnement - stylisation
+***************************************************/
+
+/* dimentionnement des images dans leur container */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
+}
+
+/* image de fond du header + hauteur en 100% hauteur écran */
+.fond {
+    /* padding: 40px 100px; */
+    min-height: 100vh;
+    background-image: url(../img/fond3-ok.jpg);
+    background-size: cover;
+    box-shadow: 0 0 1px 1000px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* style du top menu */
+#menu {
+    padding: 40px 0 140px 0;
+    font-size: 20px;
+    line-height: 50px;
+    text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* style du logo du menu */
+#menu svg {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* dimensions du logo d'accueil */
+#header svg {
+    height: 150px;
+    width: 150px;
+}
+
+/* Style et padding du titre h1 + h2 */
+h1 {
+    padding: 20px 0 60px 0;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2 {
+    padding-bottom: 40px;
+    font-size: 34px;
+}
+
+/* Mise en forme du bouton d'accueil */
+.button-1 {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    vertical-align: middle;
+    border: 1px solid white;
+    font-size: 26px;
+    padding: 10px 20px;
+    /* border-radius: 4px; */
+    text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+}
+
+/* dimensionnement et style du menu recherche */
+#search {
+    font-size: 24px;
+    padding: 60px 0;
+}
+
+/* Mise en forme du bouton de la partie recherche */
+.button-2 {
+    display: inline-block;
+    width: 250px;
+    height: 60px;
+    font-size: 26px;
+    font-weight: bold;
+    background-color: #FF8A7A;
+    color: white;
+    text-align: center;
+    align-items: center;
+    /* border-radius: 4px; */
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+}
+
+/* image de fond de la partie trends */
+#trends {
+    background-image: url(../img/fond2-ok.jpg);
+    background-size: cover;
+    box-shadow: 0 0 1px 1000px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* style et dimenstion du texte des articles de trends  + titre h5*/
+.trend-desc {
+    text-align: left;
+    padding: 15px 25px 20px 25px;
+    background-color: white;
+}
+
+#trends h5 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* style du "tag" de la trend */
+.trend-desc div {
+    font-size: 14px;
+    text-transform: none;
+    padding-top: 5px;
+}
+
+/* modif du padding pour le h4 de kind */
+#kind h4 {
+    padding-bottom: 60px;
+}
+
+/* dimentionnement des logos svg de kind */
+#kind .logo-medium {
+    height: 150px;
+    width: 150px;
+}
+
+/* couleur de remplissage des logos svg de kind */
+#kind svg {
+    fill: rgba(66, 134, 237, 0.9);
+}
+
+/* style et dimensions de nom des logos de kind */
+.kind-bloc div {
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 28px;
+}
+
+/* image de fond de la partie about */
+#about {
+    background-image: url(../img/fond4-ok.jpg);
+    background-size: cover;
+    width: 100%;
+    box-shadow: 0 0 1px 1000px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* style et redimension des marges en dehors du container pour p de about */
+#about p {
+    text-align: center;
+    font-size: 30px;
+    /* margin: 0 -145px 60px -145px; */
+    padding: 0 145px 60px 145px;
+}
+
+/* Mise en forme du bouton de la about */
+.button-3 {
+    width: 250px;
+    height: 60px;
+    vertical-align: middle;
+    background-color: #FF8A7A;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px 20px;
+    /* border-radius: 4px; */
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+}
+
+/* dimension et style des articles */
+#foot {
+    padding: 80px 0 60px 0;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* positionne les articles en flex-start */
+#foot.flex {
+    align-items: flex-start;
+}
+
+#foot h3 {
+    padding-bottom: 35px;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+/* dimensionne les articles avec un taille min et max */
+#foot article {
+    min-width: 250px;
+    max-width: 350px
+}
+
+/* padding des p articles */
+#foot article p {
+    padding-bottom: 20px;
+}
+
+/* style du formulaire newsletter */
+#foot article form,
+#foot article fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* dimension input newsletter */
+#newsemail {
+    width: 270px;
+    height: 60px;
+}
+
+/* dimension et position du bouton newsletter */
+.newsletter .button-2 {
+    width: 70px;
+    height: 60px;
+    transform: translateY(2px);
+}
+
+/* style placeholder input newsletter */
+#newsemail::placeholder {
+    color: white;
+}
+
+/* style des liens adresse */
+.address a {
+    text-transform: none;
+}
+
+/* dimension et marge des logo sociaux */
+#foot svg {
+    height: 30px;
+    width: 30px;
+    margin: 15px 15px 0 0;
+}
+
+/* style barre horizontale en pdp */
+.hori {
+    border-color: #FF8A7A;
+    opacity: 0.5;
+}
+
+/* style et padding liens pdp */
+#footer {
+    font-size: 20px;
+    line-height: 50px;
+    padding: 15px 0;
+}
+
+/* dimension et style logo en pdp */
+#footer svg {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 5px;
+}

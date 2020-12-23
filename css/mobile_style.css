@@ -1,0 +1,123 @@
+/* CSS file used for mobile display */
+
+/* style for screen < 1200px */
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+
+    #menu ul {
+        flex-wrap: wrap;
+    }
+
+    .flex {
+        flex-wrap: wrap;
+    }
+
+    #page label {
+        width: 100%;
+        padding: 0 0 48px 0;
+    }
+
+    #trends .flex {
+        flex-wrap: nowrap;
+    }
+
+    #trends a {
+        display: inline-block;
+        width: 90%;
+        height: 90%;
+    }
+
+    #foot article {
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+}
+
+/* End condition */
+
+
+/* style for screen < 800px */
+@media screen and (max-width: 800px) {
+
+    #search input,
+    #search select {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #menu li,
+    #footer li {
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid;
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+/* End condition */
+
+
+/* style for screen < 600px */
+@media screen and (max-width: 600px) {
+
+    h2,
+    #kind h3,
+    #trends h3,
+    #about h3,
+    #kind h4,
+    #trends h4,
+    #about h4 {
+        /* font-size: 200%; */
+        font-size: 30px;
+    }
+
+    #trends, #kind, #about {
+        padding: 50px 0 50px 0;
+        /* width: 900px; */
+    }
+
+    .fond {
+        background-position: right;
+    }
+
+    header {
+        padding-bottom: 50px;
+    }
+
+    #trends article {
+        display: inline-block;
+        white-space: pre-line;
+        width: 70%;
+    }
+
+    .trend-desc {
+        /* width: 100%; */
+        white-space: normal;
+    }
+
+    .kind-bloc {
+        white-space: pre-line;
+    }
+
+    .kind-bloc div {
+        padding-top: 10px;
+    }
+
+    #about p {
+        font-size: 100%;
+        padding: 0 10px 40px 10px;
+    }
+
+    .flex {
+        display: block;
+    }
+
+}
+
+/* End condition */
